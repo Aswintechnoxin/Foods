@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { MapPin, Phone, Clock, ChevronUp } from 'lucide-react'
+import { MapPin, Phone, Clock } from 'lucide-react'
 import { FaXTwitter, FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa6";
 import ScrollTopButton from '../ScrollTopButton';
 
