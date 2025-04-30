@@ -2,8 +2,6 @@
 
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 
 const images = [
   '/asset/pexels-catscoming-955137.jpg',
@@ -40,7 +38,6 @@ export default function CustomSlider() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [autoSlideInterval, setAutoSlideInterval] = useState<NodeJS.Timeout | null>(null);
 
-
   const startAutoSlide = () => {
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % images.length);
@@ -54,17 +51,11 @@ export default function CustomSlider() {
   };
 
   useEffect(() => {
-    AOS.init({ duration: 800 });
     startAutoSlide();
-
     return () => {
       if (autoSlideInterval) clearInterval(autoSlideInterval);
     };
   }, []);
-
-  useEffect(() => {
-    AOS.refresh(); 
-  }, [currentIndex]);
 
   return (
     <div className="w-full py-10 px-5">
@@ -83,11 +74,7 @@ export default function CustomSlider() {
         </div>
 
         {/* Center: Main image */}
-        <div
-          className="lg:col-span-4 border-8 border-white justify-self-center "
-          key={currentIndex} // Force re-render
-          data-aos="zoom-in"
-        >
+        <div className="lg:col-span-4 border-8 border-white justify-self-center">
           <Image
             src={images[currentIndex]}
             alt="Main"
@@ -103,6 +90,7 @@ export default function CustomSlider() {
             <h3 className="text-3xl font-bold text-red-600">{contentData[currentIndex].title}</h3>
             <p className="text-gray-600 text-lg">{contentData[currentIndex].description}</p>
           </div>
+
           <div className="flex gap-4">
             <button
               onClick={() => {
