@@ -40,7 +40,6 @@ export default function CustomSlider() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [autoSlideInterval, setAutoSlideInterval] = useState<NodeJS.Timeout | null>(null);
 
-  const updateMainImage = (index: number) => setCurrentIndex(index);
 
   const startAutoSlide = () => {
     const interval = setInterval(() => {

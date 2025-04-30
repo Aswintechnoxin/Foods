@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
+import type { Swiper as SwiperType } from "swiper/types"; // ✅ Import Swiper type
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -42,7 +43,7 @@ export default function Testimonials() {
         <h2 className="text-3xl md:text-4xl font-bold mb-12">What Clients Say</h2>
 
         <div className="relative">
-          {/* Custom Navigation Buttons (positioned over Swiper) */}
+          {/* Custom Navigation Buttons */}
           <button
             ref={prevRef}
             className="absolute top-1/2 lg:left-26 left-3 z-20 transform -translate-y-1/2 bg-red-500 text-white p-3 rounded-full shadow-md hover:bg-red-600 transition"
@@ -65,10 +66,11 @@ export default function Testimonials() {
               delay: 5000,
               disableOnInteraction: false,
             }}
-            onBeforeInit={(swiper) => {
-              const navigation = swiper.params.navigation as any;
-              navigation.prevEl = prevRef.current;
-              navigation.nextEl = nextRef.current;
+            onBeforeInit={(swiper: SwiperType) => {
+              if (swiper.params.navigation && typeof swiper.params.navigation !== "boolean") {
+                swiper.params.navigation.prevEl = prevRef.current;
+                swiper.params.navigation.nextEl = nextRef.current;
+              }
             }}
             onSwiper={(swiper) => {
               setTimeout(() => {
@@ -91,6 +93,8 @@ export default function Testimonials() {
                     <Image
                       src={testimonial.image}
                       alt={testimonial.name}
+                      width={96}
+                      height={96}
                       className="w-24 h-24 rounded-full object-cover border-4 border-white shadow-lg"
                     />
                   </div>

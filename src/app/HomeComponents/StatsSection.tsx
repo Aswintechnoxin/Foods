@@ -46,7 +46,8 @@ export default function StatsSection() {
                 <Image
                   src={stat.image}
                   alt={stat.label}
-                  fill
+                  width={1000}
+                  height={1000}
                   className="object-cover group-hover:scale-105 transition-transform duration-300"
                 />
                 <div className="absolute inset-0 bg-black/50"></div>

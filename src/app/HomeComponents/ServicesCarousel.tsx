@@ -85,7 +85,8 @@ export default function ServicesCarousel() {
                     <Image
                       src={service.image}
                       alt={service.title}
-                      fill
+                      width={1000}
+                      height={1000}
                       className="object-cover"
                     />
                   </div>

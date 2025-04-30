@@ -26,6 +26,8 @@ const HeroSection = () => {
                 <Image
                   src={`/asset/${img}`}
                   alt={`Hero Image ${index + 1}`}
+                  width={1000}
+                  height={1000}
                   className="w-full h-full "
                 />
               </SwiperSlide>
