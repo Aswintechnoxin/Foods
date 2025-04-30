@@ -4,6 +4,7 @@ import { Navigation, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import '../HomeComponents/home.css'
+import Image from 'next/image';
 const HeroSection = () => {
   return (
     <div className="banner bg-cover bg-gray-700 px-4 py-10 md:py-16">
@@ -22,7 +23,7 @@ const HeroSection = () => {
           >
             {['1.png', '2.png', '3.png', '4.png', '3.png'].map((img, index) => (
               <SwiperSlide key={index}>
-                <img
+                <Image
                   src={`/asset/${img}`}
                   alt={`Hero Image ${index + 1}`}
                   className="w-full h-full "

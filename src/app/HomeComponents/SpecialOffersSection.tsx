@@ -1,5 +1,7 @@
 // components/SpecialOffersSection.tsx
 
+import Image from "next/image";
+
 export default function SpecialOffersSection() {
     return (
       <section className="pt-3 my-10">
@@ -30,7 +32,7 @@ export default function SpecialOffersSection() {
                 },
               ].map((item, idx) => (
                 <div key={idx} className="flex items-start mb-4">
-                  <img src={item.img} alt={item.title} className="w-[70px] h-[70px] object-cover rounded-[10px] mr-3" />
+                  <Image src={item.img} alt={item.title} className="w-[70px] h-[70px] object-cover rounded-[10px] mr-3" />
                   <div className="flex-grow">
                     <h6 className="text-[#ce1212] font-bold text-[20px] mb-1">{item.title}</h6>
                     <p className="text-sm m-0">{item.desc}</p>
@@ -48,7 +50,7 @@ export default function SpecialOffersSection() {
             <div className="lg:w-1/2 grid grid-cols-2 gap-3">
               {[1, 2, 3, 4].map((_, idx) => (
                 <div key={idx} className="relative">
-                  <img
+                  <Image
                     src="/asset/pexels-alexy-almond-3756498.jpg"
                     alt="Menu Item"
                     className="rounded w-full h-auto"

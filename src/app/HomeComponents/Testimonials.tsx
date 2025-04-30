@@ -7,6 +7,7 @@ import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 
 import "swiper/css";
 import "swiper/css/navigation";
+import Image from "next/image";
 
 const testimonials = [
   {
@@ -87,7 +88,7 @@ export default function Testimonials() {
               <SwiperSlide key={idx}>
                 <div className="flex flex-col items-center relative px-4">
                   <div className="absolute z-10">
-                    <img
+                    <Image
                       src={testimonial.image}
                       alt={testimonial.name}
                       className="w-24 h-24 rounded-full object-cover border-4 border-white shadow-lg"
