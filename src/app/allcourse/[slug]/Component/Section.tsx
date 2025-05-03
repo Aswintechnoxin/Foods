@@ -1,52 +1,49 @@
-import Image from "next/image"
+import Image from "next/image";
 import { CiUser } from "react-icons/ci";
-
 
 export default function section() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-12 gap-4 p-4">
-      
+
       <div className="md:col-span-4">
-
-      <div className="bg-white shadow-md rounded-[2.2rem] p-8 text-black space-y-6 max-w-md mx-auto">
-  <h3 className="text-2xl font-semibold leading-snug text-center">
-    Enroll today and don’t<br />miss out!
-  </h3>
-  <form className="space-y-4">
-    <input
-      type="text"
-      placeholder="Full Name"
-      className="w-full px-5 py-3 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-red-500"
-    />
-    <input
-      type="email"
-      placeholder="Email Address"
-      className="w-full px-5 py-3 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-red-500"
-    />
-    <input
-      type="text"
-      placeholder="Enter Course"
-      className="w-full px-5 py-3 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-red-500"
-    />
-    <input
-      type="tel"
-      placeholder="Phone No"
-      className="w-full px-5 py-3 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-red-500"
-    />
-    <button
-      type="submit"
-      className="w-full bg-red-700 hover:bg-red-800 text-white font-semibold py-3 rounded-full"
-    >
-      Apply Today
-    </button>
-  </form>
-</div>
-
+        <div className="bg-white shadow-md rounded-[2.2rem] p-8 text-black space-y-6 max-w-md mx-auto">
+          <h3 className="text-2xl font-semibold leading-snug text-center">
+            Enroll today and don&apos;t<br />miss out!
+          </h3>
+          <form className="space-y-4">
+            <input
+              type="text"
+              placeholder="Full Name"
+              className="w-full px-5 py-3 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-red-500"
+            />
+            <input
+              type="email"
+              placeholder="Email Address"
+              className="w-full px-5 py-3 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-red-500"
+            />
+            <input
+              type="text"
+              placeholder="Enter Course"
+              className="w-full px-5 py-3 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-red-500"
+            />
+            <input
+              type="tel"
+              placeholder="Phone No"
+              className="w-full px-5 py-3 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-red-500"
+            />
+            <button
+              type="submit"
+              className="w-full bg-red-700 hover:bg-red-800 text-white font-semibold py-3 rounded-full"
+            >
+              Apply Today
+            </button>
+          </form>
+        </div>
       </div>
+
       <div className="md:col-span-8">
         <div className="max-w-4xl mx-auto px-4 py-8">
-
-          <div className=" bg-white">
+          <div className="bg-white">
             <div className="rounded-lg overflow-hidden shadow-lg relative w-full h-100">
               <Image
                 src="/banner.jpg"
@@ -99,7 +96,7 @@ export default function section() {
               </ul>
 
               <blockquote className="border-l-4 border-blue-400 pl-4 italic text-gray-600">
-                <p>"To care for those who once cared for us is one of the highest honors."</p>
+                <p>To care for those who once cared for us is one of the highest honors.</p>
                 <p className="text-sm font-light mt-1">– Tia Walker</p>
               </blockquote>
             </div>
@@ -107,5 +104,5 @@ export default function section() {
         </div>
       </div>
     </div>
-  )
+  );
 }

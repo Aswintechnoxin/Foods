@@ -13,7 +13,7 @@ export default function Professional() {
                         </div>
                         <div className="content-professional">
                             <h2>Interested in Becoming a <br></br> Paramedical Professional</h2>
-                            <p>You're in the right place! To find out more.</p>
+                            <p>You&apos;re in the right place! To find out more.</p>
                             <Link
                                 href='#'
                                 className='inline-flex items-center gap-4 bg-red-700 hover:bg-red-700 px-6 py-3 rounded-full font-semibold text-white transition home-about-btn'
