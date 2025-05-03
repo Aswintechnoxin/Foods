@@ -19,10 +19,301 @@
   }
 }
 
+:root {
+  --theme-color: #c51f31;
+  --theme-color2: #FFCC33;
+  --theme-color3: #0f2e53;
+  --vs-secondary-color: #0f2e53;
+  --title-color: #0A282C;
+  --body-color: #585B5B;
+  --smoke-color: #F3F3F3;
+  --black-color: #000000;
+  --white-color: #ffffff;
+  --yellow-color: #fec624;
+  --success-color: #28a745;
+  --error-color: #dc3545;
+  --border-color: #e8e8e8;
+  --title-font: "DM Sans", sans-serif;
+  --body-font: "DM Sans", sans-serif;
+  --icon-font: "Font Awesome 5 Pro";
+  --main-container: 1290px;
+  --container-gutters: 30px;
+  --section-space: 80px;
+  --section-space-mobile: 80px;
+  --section-title-space: 70px;
+  --ripple-ani-duration: 5s;
+}
+
+html,
 body {
+  scroll-behavior: auto !important;
+}
+
+body {
+
   background: var(--background);
   color: var(--foreground);
-  font-family: "Libre Baskerville", serif;
+  font-family: "DM Sans", sans-serif;
+  font-size: 16px;
   font-weight: 400;
-  font-style: normal;
+  line-height: 26px;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.h1,
+h1,
+.h2,
+h2,
+.h3,
+h3,
+.h4,
+h4,
+.h5,
+h5,
+.h6,
+h6 {
+  font-family: var(--title-font);
+  color: var(--title-color);
+  text-transform: none;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 15px 0;
+}
+
+.h1,
+h1 {
+  font-size: 48px;
+}
+
+.h2,
+h2 {
+  font-size: 40px;
+}
+
+.h3,
+h3 {
+  font-size: 36px;
+}
+
+.h4,
+h4 {
+  font-size: 30px;
+}
+
+.h5,
+h5 {
+  font-size: 24px;
+}
+
+.h6,
+h6 {
+  font-size: 20px;
+}
+
+
+
+/* Large devices */
+@media (max-width: 1199px) {
+
+  .h1,
+  h1 {
+    font-size: 40px;
+  }
+
+  .h2,
+  h2 {
+    font-size: 36px;
+  }
+
+  .h3,
+  h3 {
+    font-size: 30px;
+  }
+
+  .h4,
+  h4 {
+    font-size: 24px;
+  }
+  
+}
+
+/* Small devices */
+@media (max-width: 767px) {
+
+  .h1,
+  h1 {
+    font-size: 36px;
+  }
+
+  .h2,
+  h2 {
+    font-size: 30px;
+  }
+
+  .h3,
+  h3 {
+    font-size: 26px;
+  }
+
+  .h4,
+  h4 {
+    font-size: 22px;
+  }
+}
+
+p {
+  margin: 0 0 18px 0;
+  color: var(--body-color);
+  line-height: 1.75;
+  font-family: var(--body-font);
+}
+
+@media only screen and (min-width: 1300px) {
+
+  .container {
+    max-width: calc(var(--main-container) + var(--container-gutters));
+    padding-left: calc(var(--container-gutters) / 2);
+    padding-right: calc(var(--container-gutters) / 2);
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+  }
+}
+
+.breadcumb-title {
+  font-size: 70px;
+  color: var(--white-color);
+
+}
+
+
+.vs-btn {
+  border: none;
+  vertical-align: middle;
+  display: inline-block;
+  text-align: center;
+  font-family: var(--title-font);
+  background-color: var(--theme-color);
+  color: var(--white-color);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.2;
+  padding: 21.5px 40px;
+  border-radius: 9999px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.space,
+.space-top {
+  padding-top: var(--section-space);
+}
+
+.space,
+.space-bottom {
+  padding-bottom: var(--section-space);
+}
+
+.space-extra,
+.space-extra-bottom {
+  padding-bottom: calc(var(--section-space) - 30px);
+}
+
+@media (max-width: 991px) {
+
+  .space,
+  .space-top {
+    padding-top: var(--section-space-mobile);
+  }
+
+  .space,
+  .space-bottom {
+    padding-bottom: var(--section-space-mobile);
+  }
+
+  .space-extra,
+  .space-extra-bottom {
+    padding-bottom: calc(var(--section-space-mobile) - 30px);
+  }
+}
+
+.mega-hover {
+  position: relative;
+  overflow: hidden;
+}
+
+.mega-hover img {
+  transition: all 2s ease;
+  transform: scale(1);
+}
+
+.mega-hover:after,
+.mega-hover:before {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  opacity: 1;
+  z-index: 3;
+  transform: rotate(5deg);
+}
+
+.mega-hover:before {
+  top: -10%;
+  right: 51%;
+  bottom: -10%;
+  left: 50%;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.mega-hover:after {
+  top: 50%;
+  right: -10%;
+  bottom: 50%;
+  left: -10%;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.mega-hover:hover:before {
+  left: 0;
+  right: 0;
+  opacity: 0;
+  transition: all 900ms linear;
+}
+
+.mega-hover:hover:after {
+  top: 0;
+  bottom: 0;
+  opacity: 0;
+  transition: all 900ms linear;
+}
+
+.mega-hover:hover img {
+  transform: scale(1.05);
+}
+
+.wow-animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+}
+
+.border-bottom-banner {
+  border-bottom: 5px solid var(--theme-color2);
+
+}
+
+.icon-menu {
+  content: "\f80c";
+  position: relative;
+  font-weight: 700;
+  margin-right: 5px;
+  color: var(--white-color);
 }

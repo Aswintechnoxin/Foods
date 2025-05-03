@@ -1,87 +1,78 @@
-'use client';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Autoplay } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import '../HomeComponents/home.css'
-import Image from 'next/image';
-const HeroSection = () => {
+import Image from 'next/image'
+import './style.css'
+
+export default function Banner() {
   return (
-    <div className="banner bg-cover bg-gray-700 px-4 py-10 md:py-16">
-  <section id="hero">
-    <div className="max-w-7xl mx-auto">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-        
-        {/* Image Slider - col-span-8 */}
-        <div className="lg:col-span-8 w-full shadow-md rounded-xl overflow-hidden">
-          <Swiper
-            modules={[Navigation, Autoplay]}
-            navigation
-            autoplay={{ delay: 3000 }}
-            loop
-            className="h-[300px] sm:h-[400px] md:h-[450px] lg:h-[500px] w-full"
-          >
-            {['1.png', '2.png', '3.png', '4.png', '3.png'].map((img, index) => (
-              <SwiperSlide key={index}>
-                <Image
-                  src={`/asset/${img}`}
-                  alt={`Hero Image ${index + 1}`}
-                  width={1000}
-                  height={1000}
-                  className="w-full h-full "
+    <section className='bg-banner py-10'>
+      <div className='items-center grid grid-cols-1 md:grid-cols-2 mx-auto px-4 max-w-7xl'>
+        {/* Left Side - Form */}
+        <div>
+          <h2 className='mb-6 font-bold text-[28px] text-gray-800 md:text-[40px]'>
+            Minerva Institute of <br /> Paramedical Science
+          </h2>
+
+          <div className='bg-white shadow-md p-6 rounded-xl max-w-md'>
+            <form>
+              <div className='mb-4'>
+                <input
+                  type='text'
+                  placeholder='Full Name'
+                  className='p-3 border rounded-full outline-none w-full'
                 />
-              </SwiperSlide>
-            ))}
-          </Swiper>
+              </div>
+              <div className='mb-4'>
+                <input
+                  type='email'
+                  placeholder='Email Address'
+                  className='p-3 border rounded-full outline-none w-full'
+                />
+              </div>
+              <div className='mb-4'>
+                <input
+                  type='tel'
+                  placeholder='Phone No'
+                  className='p-3 border rounded-full outline-none w-full'
+                />
+              </div>
+              <button
+                type='submit'
+                className='bg-[#D62828] hover:bg-[#bb1f1f] py-3 rounded-full w-full font-semibold text-white transition'
+              >
+                Apply Today
+              </button>
+            </form>
+          </div>
         </div>
 
-        {/* Contact Form - col-span-4 */}
-        <div
-          className="lg:col-span-4 w-full bg-white rounded-xl shadow-md p-6 text-center"
-          data-aos="zoom-out"
-        >
-          <form id="contact" action="" method="post" className="space-y-4">
-            <h3 className="text-2xl font-semibold text-gray-800">Quick Contact</h3>
-            <h6 className="!lg:text[12px] text-gray-500">
-              Contact us today, and get a reply within 24 hours!
-            </h6>
-            <input
-              type="text"
-              placeholder="Your name"
-              required
-              className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
+        {/* Right Side - Image & CTA */}
+        <div className='relative flex justify-start items-center mt-10 md:mt-0'>
+          {/* Yellow semi-circle background */}
+          <div>
+            <div className="img-box1 style2">
+              <div className="vs-circless">
+              </div>
+            </div>
+
+            {/* Doctor Image */}
+            <Image
+              src='/home/banner.webp'
+              alt='Doctor Banner'
+              width={800}
+              height={800}
+              className='z-10 banner-img'
             />
-            <input
-              type="email"
-              placeholder="Your Email Address"
-              required
-              className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
-            />
-            <input
-              type="tel"
-              placeholder="Your Phone Number"
-              required
-              className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
-            />
-            <textarea
-              placeholder="Type your Message Here..."
-              required
-              className="w-full p-3 border border-gray-300 rounded-md h-[100px] resize-none focus:outline-none focus:ring-2 focus:ring-red-500"
-            ></textarea>
-            <button
-              type="submit"
-              className="w-full bg-red-600 text-white p-3 rounded-md hover:bg-blue-700 transition duration-300"
-            >
-              Submit
+          </div>
+
+          {/* Online Class CTA */}
+          <div className='right-6 bottom-6 z-20 absolute bg-[#001F3F] shadow-lg p-4 pr-10 pb-5 pl-10 rounded-xl max-w-xs text-white text-center home-ct-color'>
+            <p className='font-semibold text-[30px] text-lg'>Online Class</p>
+            <p className='mb-3 text-[18px] text-sm'>Click to start your journey</p>
+            <button className='bg-[#D62828] px-4 py-2 rounded-full font-medium text-white text-sm'>
+              Explore More
             </button>
-          </form>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
-</div>
-
-  );
-};
-
-export default HeroSection;
+    </section>
+  )
+}

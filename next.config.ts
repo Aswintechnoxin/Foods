@@ -1,9 +1,8 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   images: {
-    domains: ['img.icons8.com', 'www.w3schools.com'], // ✅ Added w3schools.com
+    domains: ['saddlebrown-stingray-368718.hostingersite.com'], 
   },
 };
 
-export default nextConfig;
+module.exports = nextConfig;
