@@ -99,7 +99,7 @@ export default function section() {
               </ul>
 
               <blockquote className="border-l-4 border-blue-400 pl-4 italic text-gray-600">
-                <p>"To care for those who once cared for us is one of the highest honors."</p>
+                <p>&ldquo;To care for those who once cared for us is one of the highest honors.&rdquo;</p>
                 <p className="text-sm font-light mt-1">– Tia Walker</p>
               </blockquote>
             </div>
