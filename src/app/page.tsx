@@ -1,21 +1,24 @@
-import Banner from './HomeComponents/Banner'
-import About from './HomeComponents/About'
-import Course from './HomeComponents/Course'
-import Admission from './HomeComponents/Admission'
-import Professional from './HomeComponents/Professional'
-import StudentExperiences from './HomeComponents/StudentExperiences'
-import BlogCard from './HomeComponents/BlogCard'
+import Banner from '@/app/HomeComponents/Banner'
+import CustomSlider from './HomeComponents/CustomSlider';
+import WhyChooseUs from './HomeComponents/WhyChooseUs';
+import StatsSection from './HomeComponents/StatsSection';
+import ServicesCarousel from './HomeComponents/ServicesCarousel';
+import Testimonials from './HomeComponents/Testimonials';
+import SpecialOffersSection from './HomeComponents/SpecialOffersSection';
+import HowWork from './HomeComponents/HowWork';
 
 export default function Home() {
   return (
     <>
-      <Banner />
-      <About />
-      <Course />
-      <Admission />
-      <Professional />
-      <StudentExperiences />
-      <BlogCard />
+    <Banner/>
+    <CustomSlider/>
+    <HowWork />
+    <WhyChooseUs/>
+    <ServicesCarousel/>
+    <StatsSection/>
+    <Testimonials />
+    <SpecialOffersSection/>
+  
     </>
-  )
+  );
 }

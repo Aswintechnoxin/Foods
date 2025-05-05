@@ -4,6 +4,7 @@ import Header from './Header/page'
 import Footer from './Footer/page'
 
 
+
 export const metadata: Metadata = {
   title: 'The Minerva Institute of Paramedical Science - Home',
   description: 'The Minerva Institute of Paramedical Science'
@@ -19,9 +20,9 @@ export default function RootLayout ({
       <body
         className={`antialiased`}
       >
-        <Header />
+        <Header/>
         {children}
-        <Footer />
+        <Footer/>
       </body>
     </html>
   )
