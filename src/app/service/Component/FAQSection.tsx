@@ -23,7 +23,7 @@ export default function FAQSection() {
                 <div className="space-y-4 text-left">
                     <details className="bg-white rounded shadow-sm">
                         <summary className="cursor-pointer py-3 px-5 font-medium hover:bg-gray-50">
-                            What services are included in Warna Caterer&apos;s wedding catering packages?
+                            What services are included in Warna Caterer&apos;s wedding catering package?
                         </summary>
                         <div className="px-5 pb-4 text-gray-600">
                             Our packages include full-service catering, table setup, wait staff, and customized menu options.
