@@ -6,24 +6,24 @@ export default function FAQSection() {
                 <p className="text-sm text-gray-600 mb-2">Frequently Asked Question</p>
                 <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">FIND QUICK ANSWERS</h2>
                 <div className="mb-8">
-                 <div className="w-full flex justify-center items-center">
-           
-                               <Image
-                                   src="/star.png"
-                                   alt="Wedding Catering Service"
-                                   quality={100}
-                                   width={1000}
-                                   height={1000}
-                                   className='lg:w-1/3 h-10 '
-                                   priority
-                               />
-                               </div>
+                    <div className="w-full flex justify-center items-center">
+
+                        <Image
+                            src="/star.png"
+                            alt="Wedding Catering Service"
+                            quality={100}
+                            width={1000}
+                            height={1000}
+                            className='lg:w-1/3 h-10 '
+                            priority
+                        />
+                    </div>
                 </div>
 
                 <div className="space-y-4 text-left">
                     <details className="bg-white rounded shadow-sm">
                         <summary className="cursor-pointer py-3 px-5 font-medium hover:bg-gray-50">
-                            What services are included in Warna Caterer's wedding catering packages?
+                            What services are included in Warna Caterer&apos;s wedding catering packages?
                         </summary>
                         <div className="px-5 pb-4 text-gray-600">
                             Our packages include full-service catering, table setup, wait staff, and customized menu options.

@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 
 const images = [
@@ -36,25 +36,26 @@ const contentData = [
 
 export default function CustomSlider() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [autoSlideInterval, setAutoSlideInterval] = useState<NodeJS.Timeout | null>(null);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
   const startAutoSlide = () => {
-    const interval = setInterval(() => {
+    stopAutoSlide(); // clear if any existing
+    intervalRef.current = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % images.length);
     }, 3000);
-    setAutoSlideInterval(interval);
+  };
+
+  const stopAutoSlide = () => {
+    if (intervalRef.current) clearInterval(intervalRef.current);
   };
 
   const resetAutoSlide = () => {
-    if (autoSlideInterval) clearInterval(autoSlideInterval);
     startAutoSlide();
   };
 
   useEffect(() => {
     startAutoSlide();
-    return () => {
-      if (autoSlideInterval) clearInterval(autoSlideInterval);
-    };
+    return () => stopAutoSlide(); // cleanup
   }, []);
 
   return (
